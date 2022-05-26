@@ -1,0 +1,21 @@
+#.rst:
+# Tree-Sitter
+# -----------
+#
+# CMake package for TreeSitterPlusPlus.
+#
+# IMPORTED Targets
+# ^^^^^^^^^^^^^^^^
+#
+# This module defines the :prop_tgt:`IMPORTED` target
+# ``Tree-Sitter::Tree-Sitter``. Add this to your target using
+# :command:`target_link_libraries` to automatically add the required include
+# directories, link libraries, and compiler flags required to use Tree-sitter.
+
+@PACKAGE_INIT@
+
+set(TREESITTERPLUSPLUS_VERSION "@PROJECT_VERSION@")
+
+if (NOT TARGET Tree-Sitter::Tree-Sitter)
+    include("${CMAKE_CURRENT_LIST_DIR}/tree-sitter-targets.cmake")
+endif()
